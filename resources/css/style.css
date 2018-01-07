@@ -1,7 +1,57 @@
 /* Universal Styles */
+html {
+  /*font-family: 'Arvo', serif;*/
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+}
 
 /* Navigation Bar */
+.nav-bar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+}
 
+.logo{
+  display: flex;
+  align-items: center;
+  padding-left: 1.5rem;
+}
+.logo img{
+  height: 2rem;
+}
+.nav-bar h1{
+  font-size:1.5rem;
+}
+
+/* Navigation Bar buttons */
+/*todo: check if generalize*/
+.btn{
+  color:black;
+}
+.links{
+  padding-right: 0.5rem;
+}
+.links ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.links li {
+  display: inline;
+  padding-right: 1rem;
+}
+
+.links .btn.active {
+  color: white;
+  background-color: red;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .5);
+}
 /* Header */
 
 /* Footer */
