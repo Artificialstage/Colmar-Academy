@@ -36,18 +36,18 @@ a {
 .links{
   padding-right: 0.5rem;
 }
-.links ul {
+.links ul{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.links li {
+.links li{
   display: inline;
   padding-right: 1rem;
 }
 
-.links .btn.active {
+.links a:hover {
   color: white;
   background-color: red;
   box-shadow: 0 2px 4px rgba(0, 0, 0, .5);
@@ -55,3 +55,10 @@ a {
 /* Header */
 
 /* Footer */
+footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 1.5rem;
+  padding-top: 1rem;
+}
