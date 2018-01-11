@@ -1,6 +1,11 @@
 /*colors*/
 :root{
-  --test: black;
+  --background: white;
+  --background_grey: #d8d8d8;
+  --lightgrey: #9b9b9b;
+  --darkgrey: #4a4a4a;
+  /*--link: #2f98c6;*/
+  --link: #4688f1; /*same color of the video controller*/
   }
 /*fonts*/
 
@@ -11,18 +16,29 @@
   src: local('Crimson Text Regular'), local('CrimsonText-Regular'), url(https://fonts.gstatic.com/s/crimsontext/v8/3IFMwfRa07i-auYR-B-zNRampu5_7CjHW5spxoeN3Vs.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
 }
+
 @font-face {
-  font-family: 'Roboto';
+  font-family: 'Lato';
   font-style: normal;
   font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/oMMgfZMQthOryQo9n22dcuvvDin1pK8aKteLpeZ5c0A.woff2) format('woff2');
+  src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v14/MDadn8DQ_3oT6kvnUq_2r_esZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
 }
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Montserrat Medium'), local('Montserrat-Medium'), url(https://fonts.gstatic.com/s/montserrat/v12/BYPM-GE291ZjIXBWrtCweteM9fzAXBk846EtUMhet0E.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
+}
+
+
 /* Universal Styles */
 html {
   font-family: 'Crimson Text', serif;
   font-size: 16px;
-  background-color: var(--test);
+  background-color: var(--background);
+  color: var(--darkgrey);
 }
 header{
   position: fixed;
@@ -32,6 +48,10 @@ header{
 }
 a {
   text-decoration: none;
+  color:var(--link);
+}
+a:hover{
+  font-weight: bold;
 }
 h1{
   font-weight: bold;
@@ -44,6 +64,10 @@ h2{
 h3{
   font-weight: bold;
   font-size: 1rem;
+
+}
+h1,h2,h3{
+  font-family: Montserrat;
 }
 
 /*apply to all page*/
@@ -59,6 +83,7 @@ h3{
   align-items: center;
   height: 4rem;
   background-color: white;
+  color: black;
 }
 
 .logo{
@@ -68,11 +93,20 @@ h3{
 }
 .logo img{
   height: 2rem;
+  margin-right: 0.3rem;
 }
 .nav-bar h1{
   font-size:1.5rem;
-  font-family: Roboto;
+  font-family: Lato;
 }
+.nav-bar a{
+  color:black;
+}
+.nav-bar h1 span{
+  color:var(--lightgrey);
+  font-weight: normal;
+}
+
 ul img{
   display: none;
 }
@@ -96,9 +130,8 @@ ul img{
 }
 
 .links a:hover {
-  color: white;
-  background-color: red;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, .5);
+  color: var(--darkgrey);
+  box-shadow: 0 2px 0px rgba(0, 0, 0, .5);
 }
 
 /*media for header*/
@@ -154,7 +187,7 @@ ul img{
   align-items: flex-start;
   height: 100%;
   padding-right: 5rem;
-
+  font-weight:bolder;
 }
 
 .banner_text h3{
@@ -164,16 +197,21 @@ ul img{
 .banner_text .btn a{
   display: inline-block;
   padding: 0.5rem;
+  color: white;
+  font-family: Montserrat;
 }
 
 .banner_text .btn{
   width: 100%;
-  background-color: #333333;
+  background-color:var(--darkgrey);
   text-align: center;
+}
+.banner_text .btn:hover{
+
+  background-color:var(--lightgrey);
 
 }
-
-.info_main_text h2{
+.info_main_text h1{
   padding-top: 2rem;
   padding-bottom: 1.5rem;
 }
@@ -187,7 +225,7 @@ ul img{
     padding: 1rem;
 }
 div.info:hover{
-    background-color:red;
+    /*background-color:var(--background_grey);*/
 }
 
 .info img{
@@ -212,7 +250,7 @@ div.info:hover{
 
 
 #top{
-    background-color: #666666;
+    background-color: var(--background_grey);
     padding-top: 4rem;
 }
 
@@ -226,8 +264,6 @@ div.info:hover{
 
 /*media for banner*/
 @media only screen and (max-width: 650px) {
-  /*(banner affect all the page)*/
-  /*(change definition if problems)*/
   .banner{
     flex-direction: column;
     padding-bottom: 2rem;
@@ -243,10 +279,11 @@ div.info:hover{
   }
   .banner_text{
     padding: 0 1.5rem;
-
+    width: 100%;
   }
   .wrapper{
     width: 100%;
+    padding-right: 0;
   }
   #info .image{
     display: none;
@@ -261,6 +298,10 @@ div.info:hover{
   .info img{
     width: 100%;
   }
+  .info_text{
+    width: 100%;
+    padding-top: 1.5rem;
+  }
   #mobile{
     display:block;
   }
@@ -272,7 +313,7 @@ div.info:hover{
 /*learning*/
 .learning{
   padding:2rem 3.5rem;
-  background-color: #888888;
+  background-color: var(--background_grey);
 }
 
 .title_text{
@@ -288,6 +329,13 @@ div.info:hover{
   /*I took out the margins to be sure to have 3 div per page*/
   width: calc(100% * (1/3) - 2rem);
   margin: 1rem;
+  opacity: 0.75;
+
+}
+.course:hover{
+
+  opacity: 1;
+  cursor:pointer;
 
 }
 .course img{
@@ -306,18 +354,40 @@ div.info:hover{
 }
 /*media for learning*/
 @media only screen and (max-width: 650px) {
+  .learning{
+    background-color: white;
+  }
   .learning_box{
     flex-direction:column;
+
+  }
+  .title_text{
+    padding-bottom: 0.75rem;
+  }
+  .learning{
+    padding: 2rem 1rem;
+
   }
   .course img{
     display: none;
   }
   .course{
     width: auto;
+    margin: 0.25rem 0rem;
+
+  }
+  .course_content{
+    background-color: var(--background_grey);
+    padding: 1rem 1rem 1rem 1rem;
+  }
+
+  .course_content h2{
+    font-size: 1rem;
   }
   .course_content .type,
   .course_content .details {
     display: none;
+
   }
 }
 
@@ -328,12 +398,19 @@ div.info:hover{
 }
 /*media for thesis*/
 @media only screen and (max-width: 650px) {
+  .thesis{
+    padding-bottom: 1.5rem;
+  }
   .thesis .image{
     margin-left:0;
     margin-right:0;
+    padding-bottom: 0;
   }
   .thesis .wrapper{
     display: none;
+  }
+  .thesis .title_text{
+    padding-bottom: 0;
   }
 
   .thesis .info_main_text{
@@ -347,5 +424,11 @@ footer{
   justify-content: space-between;
   align-items: center;
   padding: 1rem 1.5rem;
-  border-top: 1px solid black;
+  border-top: 1px solid var(--lightgrey);
+}
+/*media for footer*/
+@media only screen and (max-width: 650px) {
+  footer .links{
+    display: none;
+  }
 }
