@@ -9,6 +9,7 @@
   }
 /*fonts*/
 
+/*font for general text*/
 @font-face {
   font-family: 'Crimson Text';
   font-style: normal;
@@ -16,7 +17,7 @@
   src: local('Crimson Text Regular'), local('CrimsonText-Regular'), url(https://fonts.gstatic.com/s/crimsontext/v8/3IFMwfRa07i-auYR-B-zNRampu5_7CjHW5spxoeN3Vs.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
 }
-
+/*font for logo*/
 @font-face {
   font-family: 'Lato';
   font-style: normal;
@@ -24,6 +25,7 @@
   src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v14/MDadn8DQ_3oT6kvnUq_2r_esZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
 }
+/*font for h1/h2/h3*/
 @font-face {
   font-family: 'Montserrat';
   font-style: normal;
@@ -205,12 +207,12 @@ ul img{
   width: 100%;
   background-color:var(--darkgrey);
   text-align: center;
+  transition: background-color 0.2s linear;
 }
 .banner_text .btn:hover{
-
   background-color:var(--lightgrey);
-
 }
+
 .info_main_text h1{
   padding-top: 2rem;
   padding-bottom: 1.5rem;
@@ -223,9 +225,12 @@ ul img{
     display: flex;
     align-items: center;
     padding: 1rem;
+
+    transition: background-color 0.1s linear;
 }
 div.info:hover{
-    /*background-color:var(--background_grey);*/
+    background-color:var(--background_grey);
+    cursor:pointer; /*on real website define a "a" with link*/
 }
 
 .info img{
@@ -322,8 +327,8 @@ div.info:hover{
 .learning_box{
   display: flex;
   flex-wrap: wrap;
-  /*align-items: stretch;*/
 }
+
 .course{
   /*size of a div must be 30% */
   /*I took out the margins to be sure to have 3 div per page*/
@@ -333,10 +338,8 @@ div.info:hover{
 
 }
 .course:hover{
-
   opacity: 1;
-  cursor:pointer;
-
+  cursor:pointer; /*on real website define a "a" with link*/
 }
 .course img{
   width: 100%;
@@ -391,10 +394,10 @@ div.info:hover{
   }
 }
 
-
 /*thesis*/
+
 .thesis{
-  padding:2rem 0rem;
+  padding:2rem 0 0 0;
 }
 /*media for thesis*/
 @media only screen and (max-width: 650px) {
@@ -404,12 +407,15 @@ div.info:hover{
   .thesis .image{
     margin-left:0;
     margin-right:0;
-    padding-bottom: 0;
+    margin-bottom: 0;
   }
   .thesis .wrapper{
     display: none;
   }
   .thesis .title_text{
+    padding-bottom: 0;
+  }
+  .thesis .banner{
     padding-bottom: 0;
   }
 
